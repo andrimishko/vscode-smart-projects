@@ -1,5 +1,10 @@
 # Smart Projects
 
+[![Version](https://img.shields.io/github/package-json/v/andrimishko/vscode-smart-projects)](package.json)
+[![VS Code](https://img.shields.io/badge/VS%20Code-%5E1.85.0-blue?logo=visualstudiocode)](https://code.visualstudio.com/)
+[![Last commit](https://img.shields.io/github/last-commit/andrimishko/vscode-smart-projects)](https://github.com/andrimishko/vscode-smart-projects/commits)
+[![Issues](https://img.shields.io/github/issues/andrimishko/vscode-smart-projects)](https://github.com/andrimishko/vscode-smart-projects/issues)
+
 A global project switcher for Visual Studio Code. It keeps one list of your open, recent and discovered projects, shared across every VS Code window.
 
 ## Features
