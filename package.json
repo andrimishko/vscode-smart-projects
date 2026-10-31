@@ -2,9 +2,13 @@
   "name": "smart-projects",
   "displayName": "Smart Projects",
   "description": "Displays currently open VS Code projects in the Status Bar and allows quick switching between them.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "publisher": "andriimishchenko",
   "icon": "icon.jpg",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/twistedmisted/vscode-smart-projects.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -22,7 +26,13 @@
         "smartProjects.displayMode": {
           "type": "string",
           "default": "quickPick",
-          "enum": ["quickPick", "treeView", "panel", "statusBar", "statusBarTags"],
+          "enum": [
+            "quickPick",
+            "treeView",
+            "panel",
+            "statusBar",
+            "statusBarTags"
+          ],
           "enumDescriptions": [
             "Show projects in a QuickPick dropdown at the top of the window (default)",
             "Show projects in a dedicated sidebar Tree View panel",
@@ -44,7 +54,9 @@
         },
         "smartProjects.pinnedProjects": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "default": [],
           "description": "List of pinned project absolute paths."
         },
