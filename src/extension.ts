@@ -1574,8 +1574,16 @@ export function activate(context: vscode.ExtensionContext): void {
   // ── Resolve the shared state file path ──────────────────────────────────
   // By using `os.homedir()`, the state is globally shared across ALL VS Code
   // instances, even if they use different profiles or `--userDataDir`.
-  stateFilePath = path.join(os.homedir(), STATE_FILE);
-  recentFilePath = path.join(os.homedir(), RECENT_FILE);
+  // The file names include the host application's name (e.g. "Visual Studio
+  // Code", "Kiro", "Antigravity") so that different VS Code-based IDEs don't
+  // see each other's projects. Windows of the same IDE still share state.
+  const appSlug =
+    vscode.env.appName
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "") || "vscode";
+  stateFilePath = path.join(os.homedir(), `${appSlug}_${STATE_FILE}`);
+  recentFilePath = path.join(os.homedir(), `${appSlug}_${RECENT_FILE}`);
   ensureStorageDir();
 
   // ── Tag Migration (String to Array) ──────────────────────────────────────
